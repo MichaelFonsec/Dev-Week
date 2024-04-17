@@ -19,12 +19,12 @@ classDiagram
         - String number
         - String agency
         - String balance
-        - String limit
+        - Number limit
     }
 
     class Card {
         - String number
-        - BigDecimal limit
+        - Number limit
     }
 
     class Feature {

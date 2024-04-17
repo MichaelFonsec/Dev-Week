@@ -11,12 +11,11 @@ classDiagram
         - String name
         - Acount acount
         - Card card
-        - List<Feature> features
-        - List<News> news
+        - Feature[] features
+        - News[] news
     }
 
     class Acount {
-        - Long id
         - String number
         - String agency
         - String balance
@@ -24,19 +23,16 @@ classDiagram
     }
 
     class Card {
-        - Long id
         - String number
         - BigDecimal limit
     }
 
     class Feature {
-        - Long id
         - String icon
         - String description
     }
 
     class News {
-        - Long id
         - String icon
         - String description
     }

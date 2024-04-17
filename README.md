@@ -5,55 +5,45 @@ Java RESTful API
 ## Diagrama de Classes 
 
 ```mermaid
-
 classDiagram
     class Usuario {
-        - int id
-        - string nome
-        - string cpf
-        - string email
-        - Endereco endereco
-        - Conta[] contas
+        - Long id
+        - String name
+        - Acount acount
+        - Card card
+        - List<Feature> features
+        - List<News> news
     }
 
-    class Endereco {
-        - string logradouro
-        - string numero
-        - string bairro
-        - string cidade
-        - string estado
-        - string cep
+    class Acount {
+        - Long id
+        - String number
+        - String agency
+        - String balance
+        - String limit
     }
 
-    class Conta {
-        - string numero
-        - string tipo
-        - float saldo
-        + depositar(valor: float): void
-        + sacar(valor: float): boolean
+    class Card {
+        - Long id
+        - String number
+        - BigDecimal limit
     }
 
-    class ContaCorrente {
-        - float limiteChequeEspecial
-        + calcularTaxaManutencao(): float
+    class Feature {
+        - Long id
+        - String icon
+        - String description
     }
 
-    class ContaPoupanca {
-        - float taxaRendimento
-        + calcularRendimento(): float
+    class News {
+        - Long id
+        - String icon
+        - String description
     }
 
-    class Transacao {
-        - int id
-        - string tipo
-        - float valor
-        - string descricao
-        - Date data
-    }
+    Usuario "1" --> "1" Acount
+    Usuario "1" --> "1" Card
+    Usuario "1" --> "*" Feature
+    Usuario "1" --> "*" News
 
-    Usuario "1" *-- "1..*" Conta
-    Usuario "1" --> "1" Endereco
-    Conta <|-- ContaCorrente
-    Conta <|-- ContaPoupanca
-    Transacao "1" --> "1..2" Conta
 ```

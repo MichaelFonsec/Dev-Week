@@ -14,7 +14,7 @@ import jakarta.persistence.GenerationType;
 
 
 @Entity(name = "tb_user")
-public class Usuario {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,7 @@ public class Usuario {
     private String name;
 
     @OneToOne(cascade = CascadeType.ALL)
-    private Acount acount;
+    private Account account;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Card card;
@@ -48,11 +48,11 @@ public class Usuario {
     public void setName(String name) {
         this.name = name;
     }
-    public Acount getAcount() {
-        return acount;
+    public Account getAcount() {
+        return account;
     }
-    public void setAcount(Acount acount) {
-        this.acount = acount;
+    public void setAcount(Account acount) {
+        this.account = acount;
     }
     public Card getCard() {
         return card;

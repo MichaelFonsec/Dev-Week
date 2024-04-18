@@ -2,9 +2,6 @@ package me.tech.service;
 
 import me.tech.domain.model.User;
 
-public interface UserService {
-    User findById(Long id);
-    User create(User userToCreate);
-
+public interface UserService extends CrudService<Long, User> {
 
 }
